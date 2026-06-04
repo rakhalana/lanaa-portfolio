@@ -1,18 +1,26 @@
 @use 'variables' as *;
 
-.journey-timeline-wrapper {
+.experience-content-wrapper {
   position: relative;
-  max-width: 800px;
-  margin: 0 auto;
+  min-height: 300px;
+}
+
+.experience-tab-pane {
+  display: none;
+  animation: fadeInUp 0.4s ease forwards;
+  
+  &.active {
+    display: block;
+  }
+}
+
+.exp-list {
+  position: relative;
   padding-left: 24px;
   
   @media (min-width: $bp-md) {
     padding-left: 0;
   }
-}
-
-.journey-timeline {
-  position: relative;
   
   &::before {
     content: '';
@@ -30,7 +38,7 @@
   }
 }
 
-.journey-item {
+.exp-card {
   position: relative;
   margin-bottom: 64px;
   
@@ -47,24 +55,30 @@
       flex-direction: row-reverse;
       text-align: right;
       
-      .journey-content {
+      .exp-content {
         padding-right: 48px;
         padding-left: 0;
       }
       
-      .journey-year {
+      .exp-meta-side {
         text-align: left;
         padding-left: 48px;
         padding-right: 0;
+      }
+      
+      .exp-desc li::before {
+        left: auto;
+        right: -20px;
+        content: '◁';
       }
     }
   }
 }
 
-.journey-dot {
+.exp-dot {
   position: absolute;
   top: 0;
-  left: -5px;
+  left: -29px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -80,8 +94,8 @@
   }
 }
 
-.journey-content {
-  padding-left: 32px;
+.exp-content {
+  padding-left: 16px;
   
   @media (min-width: $bp-md) {
     width: 50%;
@@ -89,13 +103,13 @@
   }
 }
 
-.journey-year {
+.exp-meta-side {
   font-family: $font-heading;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: $color-accent-secondary;
   font-weight: 700;
   margin-bottom: 8px;
-  display: block; // For mobile
+  display: block;
   
   @media (min-width: $bp-md) {
     width: 50%;
@@ -105,13 +119,54 @@
   }
 }
 
-.journey-title {
-  font-size: 1.25rem;
-  color: $color-white;
-  margin-bottom: 8px;
+.exp-location {
+  display: block;
+  font-family: $font-body;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+  margin-top: 4px;
 }
 
-.journey-desc {
+.exp-role {
+  font-family: $font-heading;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: $color-white;
+  margin-bottom: 4px;
+}
+
+.exp-company {
+  color: $color-accent;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.exp-desc {
   color: $color-text-muted;
   font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  padding-left: 20px;
+  
+  @media (min-width: $bp-md) {
+    .exp-card:nth-child(odd) & {
+      padding-left: 0;
+      padding-right: 20px;
+    }
+  }
+
+  li {
+    margin-bottom: 8px;
+    position: relative;
+    list-style-type: none;
+    
+    &::before {
+      content: '▹';
+      position: absolute;
+      left: -20px;
+      color: $color-accent;
+    }
+  }
 }

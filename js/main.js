@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderHero();
   renderFeaturedWork();
   renderProjects();
-  renderJourney();
+  renderExperienceTab('work');
   renderCapabilities();
   renderDesignWork();
   renderSocialLinks();
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCanvasNetwork();
   initScrollSpy();
   initFilterTabs();
+  initExperienceTabs();
   initLightbox();
   initSectionAnimations();
   initImageFallbacks();

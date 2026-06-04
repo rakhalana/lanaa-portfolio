@@ -77,20 +77,77 @@ function renderProjects() {
   }).join('');
 }
 
-function renderJourney() {
-  const container = document.getElementById('journey-timeline');
+function renderExperienceTab(tabName = 'work') {
+  const container = document.getElementById('experience-content');
   if (!container) return;
 
-  container.innerHTML = journey.map((item, idx) => `
-    <div class="journey-item animate-on-scroll stagger-${idx + 1}">
-      <div class="journey-dot"></div>
-      <span class="journey-year">${item.year}</span>
-      <div class="journey-content">
-        <h3 class="journey-title">${item.title}</h3>
-        <p class="journey-desc">${item.description}</p>
-      </div>
+  let data = [];
+  let isEducation = false;
+  
+  if (tabName === 'work') {
+    data = workExperiences;
+  } else if (tabName === 'organization') {
+    data = organizationExperiences;
+  } else if (tabName === 'education') {
+    data = educationData;
+    isEducation = true;
+  }
+
+  container.innerHTML = `<div class="experience-tab-pane active" id="tab-${tabName}">
+    <div class="exp-list">
+      ${data.map((item, idx) => {
+        if (isEducation) {
+          return `
+            <div class="exp-card animate-on-scroll stagger-${idx + 1}">
+              <div class="exp-dot"></div>
+              <div class="exp-meta-side">
+                <span class="exp-period">${item.period}</span>
+                <span class="exp-location">GPA: ${item.gpa}</span>
+              </div>
+              <div class="exp-content">
+                <h3 class="exp-role">${item.institution}</h3>
+                <div class="exp-company">${item.degree}</div>
+                ${item.highlights ? `
+                  <ul class="exp-desc">
+                    ${item.highlights.map(hl => `<li>${hl}</li>`).join('')}
+                  </ul>
+                ` : ''}
+              </div>
+            </div>
+          `;
+        } else {
+          return `
+            <div class="exp-card animate-on-scroll stagger-${idx + 1}">
+              <div class="exp-dot"></div>
+              <div class="exp-meta-side">
+                <span class="exp-period">${item.period}</span>
+                <span class="exp-location">${item.location}</span>
+              </div>
+              <div class="exp-content">
+                <h3 class="exp-role">${item.role}</h3>
+                <div class="exp-company">${item.company}</div>
+                <ul class="exp-desc">
+                  ${item.description.map(desc => `<li>${desc}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+          `;
+        }
+      }).join('')}
     </div>
-  `).join('');
+  </div>`;
+  
+  // Re-initialize scroll animations for the new content
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
+  container.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 }
 
 function renderCapabilities() {

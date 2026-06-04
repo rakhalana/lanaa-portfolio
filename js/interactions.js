@@ -162,6 +162,22 @@ function initFilterTabs() {
   });
 }
 
+function initExperienceTabs() {
+  const tabsContainer = document.getElementById('experience-tabs');
+  if (!tabsContainer) return;
+
+  tabsContainer.addEventListener('click', e => {
+    if (e.target.tagName !== 'BUTTON') return;
+    const tab = e.target;
+    
+    tabsContainer.querySelectorAll('button').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    const tabName = tab.dataset.tab;
+    renderExperienceTab(tabName);
+  });
+}
+
 function initLightbox() {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
