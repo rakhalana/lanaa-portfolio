@@ -97,6 +97,17 @@ const educationData = [
       "Awardee of Sidoarjo Domestic Education Achievement Scholarship 2024-2025",
       "National Semifinalist in UI/UX Design Competition"
     ]
+  },
+  {
+    institution: "SMK Negeri 2 Buduran",
+    location: "Sidoarjo, Indonesia",
+    degree: "Multimedia",
+    period: "Jun 2019 - Jun 2022",
+    // gpa: "89.7/100",
+    // highlights: [
+    //   "Awardee of Sidoarjo Domestic Education Achievement Scholarship 2024-2025",
+    //   "National Semifinalist in UI/UX Design Competition"
+    // ]
   }
 ];
 
