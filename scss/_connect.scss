@@ -1,0 +1,49 @@
+// ============================================================
+// Connect Section (Social links — no form)
+// ============================================================
+
+@use 'variables' as *;
+
+.connect {
+  .connect-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-subtext {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border: 1px solid $color-border;
+      border-radius: $radius-pill;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $color-text-muted;
+      text-decoration: none;
+      background: $color-white;
+      transition: all 0.25s ease;
+
+      i { width: 18px; height: 18px; }
+
+      &:hover {
+        border-color: $color-accent;
+        color: $color-accent;
+        transform: translateY(-2px);
+        box-shadow: $shadow-card;
+      }
+    }
+  }
+}

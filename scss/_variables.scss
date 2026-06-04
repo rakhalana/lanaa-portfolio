@@ -1,0 +1,36 @@
+// ============================================================
+// Design Tokens
+// ============================================================
+
+// Colors
+$color-bg:          #F8FAFC; // Sleek cool white
+$color-bg-alt:      #F1F5F9; // Cool light slate
+$color-border:      #E2E8F0; // Delicate border slate
+$color-text:        #0F172A; // Deep obsidian slate
+$color-text-muted:  #475569; // Clean charcoal slate
+$color-accent:      #4F46E5; // Modern Indigo
+$color-accent-dark: #3730A3; // Deep Indigo
+$color-accent-light: rgba(79, 70, 229, 0.06); // Indigo tint
+$color-white:       #FFFFFF;
+$color-green:       #10B981; // Emerald green
+$color-green-dark:  #047857; // Dark emerald
+
+// Typography
+$font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+$font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+// Spacing & Shape
+$radius-card:   16px; // Softer, more modern corners
+$radius-btn:    10px;
+$radius-pill:   100px;
+$shadow-card:   0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+$shadow-hover:  0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+$shadow-glow:   0 0 50px rgba(79, 70, 229, 0.12);
+$section-gap:   120px; // Larger, more luxurious spacing
+$section-gap-mobile: 72px;
+
+// Breakpoints
+$bp-sm:  576px;
+$bp-md:  768px;
+$bp-lg:  992px;
+$bp-xl:  1200px;

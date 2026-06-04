@@ -1,0 +1,100 @@
+// ============================================================
+// Base Styles — Reset, Typography, Global
+// ============================================================
+
+@use 'variables' as *;
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-body;
+  font-weight: 400;
+  color: $color-text;
+  background-color: $color-bg;
+  line-height: 1.7;
+  font-size: clamp(0.9375rem, 0.85rem + 0.25vw, 1rem);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: $color-accent;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-accent-dark;
+  }
+}
+
+ul, ol {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-heading;
+  font-weight: 700;
+  line-height: 1.15;
+  color: $color-text;
+}
+
+h1 { font-size: clamp(2.25rem, 1.5rem + 3vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 1.25rem + 2vw, 2.375rem); }
+h3 { font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem); }
+
+// Section shared styles
+.section {
+  padding: $section-gap-mobile 0;
+
+  @media (min-width: $bp-md) {
+    padding: $section-gap 0;
+  }
+}
+
+.section-label {
+  font-family: $font-body;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: $color-accent;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.section-heading {
+  margin-bottom: 12px;
+}
+
+.section-subtext {
+  color: $color-text-muted;
+  max-width: 540px;
+  margin-bottom: 44px;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+// Override Bootstrap container max-width
+.container {
+  @media (min-width: $bp-xl) {
+    max-width: 1140px;
+  }
+}

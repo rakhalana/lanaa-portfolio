@@ -1,0 +1,95 @@
+// ============================================================
+// Organizations Styles (Tab Pane Card Grid)
+// ============================================================
+
+@use 'variables' as *;
+
+.org-card {
+  background: $color-white;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: $radius-card;
+  padding: 28px;
+  height: 100%;
+  box-shadow: $shadow-card;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba(79, 70, 229, 0.2);
+    box-shadow: $shadow-hover;
+
+    .org-header .org-icon {
+      background: $color-accent;
+      color: $color-white;
+      transform: scale(1.05);
+    }
+  }
+
+  .org-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    .org-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $color-accent-light;
+      border-radius: 12px;
+      color: $color-accent;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+
+      i, svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    .org-meta {
+      .org-name {
+        font-weight: 700;
+        font-size: 1.0625rem;
+        color: $color-text;
+        line-height: 1.35;
+        margin-bottom: 2px;
+        letter-spacing: -0.01em;
+      }
+
+      .org-role {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: $color-accent;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .org-period {
+    font-size: 0.8125rem;
+    color: $color-text-muted;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    i, svg {
+      width: 14px;
+      height: 14px;
+      color: rgba(79, 70, 229, 0.6);
+    }
+  }
+
+  .org-desc {
+    font-size: 0.875rem;
+    color: $color-text-muted;
+    line-height: 1.7;
+    margin-top: auto;
+  }
+}

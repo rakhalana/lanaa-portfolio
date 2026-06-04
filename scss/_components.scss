@@ -1,0 +1,121 @@
+// ============================================================
+// Shared Components — Buttons, Pills, Cards
+// ============================================================
+
+@use 'variables' as *;
+
+// ── Buttons ─────────────────────────────────────────────────
+
+.btn-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: $radius-btn;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+
+  svg, i { width: 18px; height: 18px; transition: transform 0.25s ease; }
+}
+
+.btn-primary-custom {
+  @extend .btn-custom;
+  background: $color-accent;
+  color: $color-white;
+  border-color: $color-accent;
+
+  &:hover {
+    background: $color-accent-dark;
+    border-color: $color-accent-dark;
+    color: $color-white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
+
+    svg, i { transform: translateX(2px); }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-outline-custom {
+  @extend .btn-custom;
+  background: transparent;
+  color: $color-text;
+  border-color: $color-border;
+
+  &:hover {
+    background: $color-bg-alt;
+    border-color: $color-text;
+    color: $color-text;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// ── Pills / Tags ───────────────────────────────────────────
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: $color-bg-alt;
+  border: 1px solid $color-border;
+  border-radius: $radius-pill;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: $color-text-muted;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: $color-text;
+    color: $color-text;
+  }
+}
+
+.pill-accent {
+  background: $color-accent-light;
+  border-color: rgba(79, 70, 229, 0.15);
+  color: $color-accent;
+
+  &:hover {
+    background: rgba(79, 70, 229, 0.1);
+    border-color: $color-accent;
+    color: $color-accent;
+  }
+}
+
+.pill-small {
+  padding: 3px 12px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+// ── Cards ──────────────────────────────────────────────────
+
+.card-custom {
+  background: $color-white;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: $radius-card;
+  box-shadow: $shadow-card;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba(79, 70, 229, 0.2);
+    box-shadow: $shadow-hover;
+  }
+}
