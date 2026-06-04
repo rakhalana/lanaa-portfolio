@@ -10,12 +10,10 @@
 // Sections (top → bottom order)
 @use 'navbar';
 @use 'hero';
-@use 'about';
-@use 'skills';
-@use 'experience';
-@use 'organizations';
-@use 'education';
+@use 'featured';
 @use 'projects';
+@use 'journey';
+@use 'capabilities';
 @use 'design-gallery';
 @use 'connect';
 @use 'footer';

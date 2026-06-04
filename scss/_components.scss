@@ -1,121 +1,136 @@
-// ============================================================
-// Shared Components — Buttons, Pills, Cards
-// ============================================================
-
 @use 'variables' as *;
 
 // ── Buttons ─────────────────────────────────────────────────
 
-.btn-custom {
+.btn-primary-custom,
+.btn-outline-custom {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 12px 28px;
-  border-radius: $radius-btn;
+  padding: 12px 24px;
   font-family: $font-body;
-  font-weight: 600;
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1.5px solid transparent;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  border-radius: $radius-btn;
+  transition: all 0.3s ease;
   text-decoration: none;
-  letter-spacing: -0.01em;
-
-  svg, i { width: 18px; height: 18px; transition: transform 0.25s ease; }
+  cursor: pointer;
 }
 
 .btn-primary-custom {
-  @extend .btn-custom;
-  background: $color-accent;
+  background-color: $color-accent;
   color: $color-white;
-  border-color: $color-accent;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
 
   &:hover {
-    background: $color-accent-dark;
-    border-color: $color-accent-dark;
+    background-color: $color-accent-dark;
     color: $color-white;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
-
-    svg, i { transform: translateX(2px); }
-  }
-
-  &:active {
-    transform: translateY(0);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.23);
   }
 }
 
 .btn-outline-custom {
-  @extend .btn-custom;
-  background: transparent;
+  background-color: transparent;
   color: $color-text;
-  border-color: $color-border;
-
+  border: 1px solid $color-border;
+  
   &:hover {
-    background: $color-bg-alt;
-    border-color: $color-text;
-    color: $color-text;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255,255,255,0.2);
+    color: $color-white;
     transform: translateY(-2px);
-  }
-
-  &:active {
-    transform: translateY(0);
   }
 }
 
-// ── Pills / Tags ───────────────────────────────────────────
+// ── Cards (Glassmorphism Premium) ───────────────────────────
+
+.custom-card {
+  background-color: $color-bg-alt;
+  border: 1px solid $color-border;
+  border-radius: $radius-card;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 1;
+  box-shadow: $shadow-card;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-hover;
+    border-color: rgba(79, 70, 229, 0.3); // Subtle indigo glow border
+  }
+}
+
+// ── Pills / Tags ────────────────────────────────────────────
 
 .pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 16px;
-  background: $color-bg-alt;
-  border: 1px solid $color-border;
+  padding: 4px 12px;
   border-radius: $radius-pill;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: $color-text-muted;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-
-  &:hover {
-    border-color: $color-text;
-    color: $color-text;
-  }
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .pill-accent {
-  background: $color-accent-light;
-  border-color: rgba(79, 70, 229, 0.15);
-  color: $color-accent;
-
-  &:hover {
-    background: rgba(79, 70, 229, 0.1);
-    border-color: $color-accent;
-    color: $color-accent;
-  }
+  background-color: $color-accent-light;
+  color: $color-accent-secondary;
+  border: 1px solid rgba(6, 182, 212, 0.2);
 }
 
-.pill-small {
-  padding: 3px 12px;
-  font-size: 0.6875rem;
-  font-weight: 600;
+.pill-muted {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: $color-text-muted;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-// ── Cards ──────────────────────────────────────────────────
+// ── Badges ──────────────────────────────────────────────────
 
-.card-custom {
-  background: $color-white;
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  border-radius: $radius-card;
-  box-shadow: $shadow-card;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: $radius-pill;
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: $color-green;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
 
-  &:hover {
-    transform: translateY(-6px);
-    border-color: rgba(79, 70, 229, 0.2);
-    box-shadow: $shadow-hover;
-  }
+.green-dot {
+  width: 8px;
+  height: 8px;
+  background-color: $color-green;
+  border-radius: 50%;
+  box-shadow: 0 0 12px $color-green;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 16px $color-green; }
+  100% { transform: scale(0.95); opacity: 0.8; }
 }

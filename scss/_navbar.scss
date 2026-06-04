@@ -1,7 +1,3 @@
-// ============================================================
-// Navbar
-// ============================================================
-
 @use 'variables' as *;
 
 .navbar-main {
@@ -10,24 +6,30 @@
   left: 0;
   right: 0;
   z-index: 1050;
-  padding: 14px 0;
+  padding: 16px 0;
   transition: all 0.35s ease;
+  background: transparent;
 
   &.scrolled {
-    background: rgba(248, 250, 252, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid $color-border;
-    padding: 10px 0;
+    padding: 12px 0;
   }
 
   .nav-logo {
     font-family: $font-heading;
     font-size: 1.375rem;
     font-weight: 700;
-    color: $color-accent;
+    color: $color-white;
     text-decoration: none;
     letter-spacing: -0.5px;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: $color-accent;
+    }
   }
 
   .nav-links {
@@ -51,19 +53,15 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: $color-accent;
+        background: $color-accent-secondary;
         border-radius: 1px;
         transition: width 0.3s ease;
       }
 
       &:hover,
       &.active {
-        color: $color-text;
+        color: $color-white;
         &::after { width: 100%; }
-      }
-
-      &.active {
-        color: $color-accent;
       }
     }
   }
@@ -82,7 +80,7 @@
       display: block;
       width: 22px;
       height: 2px;
-      background: $color-text;
+      background: $color-white;
       border-radius: 2px;
       transition: all 0.3s ease;
     }
@@ -99,8 +97,8 @@
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(248, 250, 252, 0.98);
-  backdrop-filter: blur(20px);
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(24px);
   z-index: 1049;
   display: flex;
   align-items: center;
@@ -118,17 +116,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 28px;
+    gap: 32px;
 
     a {
       font-family: $font-heading;
-      font-size: 1.625rem;
+      font-size: 1.75rem;
       font-weight: 600;
-      color: $color-text;
+      color: $color-text-muted;
       text-decoration: none;
       transition: color 0.2s ease;
 
-      &:hover, &.active { color: $color-accent; }
+      &:hover, &.active { color: $color-white; }
     }
   }
 }

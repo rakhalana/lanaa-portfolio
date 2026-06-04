@@ -1,0 +1,43 @@
+@use 'variables' as *;
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.capability-card {
+  padding: 32px;
+}
+
+.capability-category {
+  font-family: $font-heading;
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+  color: $color-accent-secondary;
+  font-weight: 600;
+}
+
+.capability-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.capability-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: $color-white;
+  font-size: 1rem;
+  
+  i {
+    color: $color-accent;
+    width: 20px;
+    height: 20px;
+  }
+}

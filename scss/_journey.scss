@@ -1,0 +1,117 @@
+@use 'variables' as *;
+
+.journey-timeline-wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 24px;
+  
+  @media (min-width: $bp-md) {
+    padding-left: 0;
+  }
+}
+
+.journey-timeline {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, $color-accent-secondary, $color-accent, transparent);
+    
+    @media (min-width: $bp-md) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.journey-item {
+  position: relative;
+  margin-bottom: 64px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  @media (min-width: $bp-md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+      text-align: right;
+      
+      .journey-content {
+        padding-right: 48px;
+        padding-left: 0;
+      }
+      
+      .journey-year {
+        text-align: left;
+        padding-left: 48px;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.journey-dot {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: $color-bg;
+  border: 2px solid $color-accent-secondary;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  
+  @media (min-width: $bp-md) {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    margin-top: -6px;
+  }
+}
+
+.journey-content {
+  padding-left: 32px;
+  
+  @media (min-width: $bp-md) {
+    width: 50%;
+    padding-left: 48px;
+  }
+}
+
+.journey-year {
+  font-family: $font-heading;
+  font-size: 1.5rem;
+  color: $color-accent-secondary;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block; // For mobile
+  
+  @media (min-width: $bp-md) {
+    width: 50%;
+    padding-right: 48px;
+    text-align: right;
+    margin-bottom: 0;
+  }
+}
+
+.journey-title {
+  font-size: 1.25rem;
+  color: $color-white;
+  margin-bottom: 8px;
+}
+
+.journey-desc {
+  color: $color-text-muted;
+  font-size: 0.9375rem;
+}

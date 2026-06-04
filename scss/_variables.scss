@@ -2,32 +2,32 @@
 // Design Tokens
 // ============================================================
 
-// Colors
-$color-bg:          #F8FAFC; // Sleek cool white
-$color-bg-alt:      #F1F5F9; // Cool light slate
-$color-border:      #E2E8F0; // Delicate border slate
-$color-text:        #0F172A; // Deep obsidian slate
-$color-text-muted:  #475569; // Clean charcoal slate
-$color-accent:      #4F46E5; // Modern Indigo
-$color-accent-dark: #3730A3; // Deep Indigo
-$color-accent-light: rgba(79, 70, 229, 0.06); // Indigo tint
+// Colors (Dark-first aesthetic)
+$color-bg:          #0A0A0A; // Deep charcoal
+$color-bg-alt:      #171717; // Slightly lighter for cards/sections
+$color-border:      #262626; // Subtle dark borders
+$color-text:        #FFFFFF; // Off-white primary text
+$color-text-muted:  #A3A3A3; // Soft gray secondary text
+$color-accent:      #4F46E5; // Indigo primary accent
+$color-accent-dark: #3730A3; // Darker Indigo for hover
+$color-accent-light: rgba(79, 70, 229, 0.15); // Indigo tint/glow
+$color-accent-secondary: #06B6D4; // Cyan secondary accent
 $color-white:       #FFFFFF;
-$color-green:       #10B981; // Emerald green
-$color-green-dark:  #047857; // Dark emerald
+$color-green:       #10B981; // Availability badge
 
 // Typography
-$font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+$font-heading: 'Geist', system-ui, -apple-system, sans-serif;
 $font-body:    'Inter', system-ui, -apple-system, sans-serif;
 
 // Spacing & Shape
-$radius-card:   16px; // Softer, more modern corners
-$radius-btn:    10px;
+$radius-card:   16px;
+$radius-btn:    8px;
 $radius-pill:   100px;
-$shadow-card:   0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
-$shadow-hover:  0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
-$shadow-glow:   0 0 50px rgba(79, 70, 229, 0.12);
-$section-gap:   120px; // Larger, more luxurious spacing
-$section-gap-mobile: 72px;
+$shadow-card:   0 4px 20px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05); // Glassmorphism feel
+$shadow-hover:  0 12px 32px rgba(79, 70, 229, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+$shadow-glow:   0 0 50px rgba(79, 70, 229, 0.2);
+$section-gap:   120px;
+$section-gap-mobile: 80px;
 
 // Breakpoints
 $bp-sm:  576px;

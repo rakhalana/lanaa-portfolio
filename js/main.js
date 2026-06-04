@@ -4,11 +4,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Render data-driven content
-  renderSkills();
-  renderExperiences();
-  renderOrganizations();
-  renderEducation();
+  renderHero();
+  renderFeaturedWork();
   renderProjects();
+  renderJourney();
+  renderCapabilities();
   renderDesignWork();
   renderSocialLinks();
 
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize interactions
   initNavbar();
+  initCanvasNetwork();
   initScrollSpy();
   initFilterTabs();
   initLightbox();
