@@ -115,16 +115,16 @@ const educationData = [
 
 const capabilities = [
   {
-    category: "Design",
-    items: ["UI/UX Design", "Wireframing", "Prototyping", "Branding"]
+    category: "Frontend Development",
+    items: ["HTML & SCSS", "JavaScript", "PHP & Laravel", "Bootstrap"]
   },
   {
-    category: "Development",
-    items: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS", "Bootstrap"]
+    category: "UI/UX & Design",
+    items: ["UI/UX Design", "Graphic Design", "Branding & Guidelines", "Figma & Illustrator"]
   },
   {
-    category: "Creative",
-    items: ["Visual Design", "Content Design", "Motion Graphics"]
+    category: "Media & Management",
+    items: ["Social Media Management", "Video Production & OBS", "Team Leadership", "Cross-functional Collab"]
   },
   {
     category: "Currently Exploring",
@@ -136,11 +136,11 @@ const capabilities = [
 
 const projects = [
   {
-    id: "personal-portfolio",
-    title: "Premium Portfolio Website",
-    description: "A dark-mode, modern product-inspired portfolio built to showcase a seamless blend of design and technology. Features custom CSS Grid layouts and interactive canvas node networks.",
-    category: "frontend",
-    tags: ["HTML", "SCSS", "JavaScript", "Canvas"],
+    id: "latest-project",
+    title: "Decision Support System for MSME Product Selection",
+    description: "Developed a web-based Decision Support System (DSS) for MSME food product curation and selection. Implemented the Analytic Hierarchy Process (AHP) for criteria weighting and Profile Matching for product evaluation, enabling objective ranking and decision-making through a multi-criteria assessment approach.",
+    category: "fullstack",
+    tags: ["HTML", "SCSS", "JavaScript", "PHP", "Laravel", "Bootstrap"],
     thumbnail: "assets/images/projects/portfolio.jpg",
     liveUrl: "#",
     sourceUrl: "https://github.com/rakhamaulana",
