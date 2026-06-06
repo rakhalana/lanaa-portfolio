@@ -11,7 +11,7 @@
   padding: 12px 24px;
   font-family: $font-body;
   font-weight: 500;
-  font-size: 0.9375rem;
+  font-size: 15px;
   border-radius: $radius-btn;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -86,7 +86,7 @@
   gap: 6px;
   padding: 4px 12px;
   border-radius: $radius-pill;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -115,7 +115,7 @@
   background-color: rgba(16, 185, 129, 0.1);
   border: 1px solid rgba(16, 185, 129, 0.2);
   color: $color-green;
-  font-size: 0.8125rem;
+  font-size: 13px;
   font-weight: 500;
   margin-bottom: 24px;
 }

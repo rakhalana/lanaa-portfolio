@@ -44,12 +44,12 @@
 }
 
 .project-title {
-  font-size: 1.25rem;
+  font-size: 20px;
   margin-bottom: 8px;
 }
 
 .project-desc {
-  font-size: 0.9375rem;
+  font-size: 15px;
   color: $color-text-muted;
   margin-bottom: 24px;
   flex: 1;
@@ -94,7 +94,7 @@
     color: $color-text-muted;
     padding: 8px 16px;
     border-radius: $radius-pill;
-    font-size: 0.875rem;
+    font-size: 14px;
     transition: all 0.3s ease;
     
     &:hover, &.active {

@@ -22,7 +22,7 @@ function renderFeaturedWork() {
     <article class="featured-card">
       <div class="featured-content">
         <h3 class="featured-title">${featured.title}</h3>
-        <p class="featured-desc">${featured.description}</p>
+        <p   class="featured-desc">${featured.description}</p>
         <div class="featured-tags">
           ${featured.tags.map(t => `<span class="pill pill-muted">${t}</span>`).join('')}
         </div>
