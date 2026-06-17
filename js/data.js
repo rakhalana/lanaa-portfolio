@@ -142,7 +142,7 @@ const projects = [
     category: "fullstack",
     tags: ["HTML", "SCSS", "JavaScript", "PHP", "Laravel", "Bootstrap"],
     thumbnail: "assets/images/projects/portfolio.jpg",
-    liveUrl: "#",
+    liveUrl: "https://dss-kurasiumkm-demo.vercel.app",
     sourceUrl: "https://github.com/rakhamaulana",
     figmaUrl: null,
     featured: true // This will be the single Featured Work
