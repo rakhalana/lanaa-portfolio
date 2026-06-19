@@ -34,3 +34,32 @@ $bp-sm:  576px;
 $bp-md:  768px;
 $bp-lg:  992px;
 $bp-xl:  1200px;
+
+// ============================================================
+// Glassmorphism Mixin
+// ============================================================
+@mixin glass-surface {
+  // Fallback for browsers without backdrop-filter
+  background-color: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: $radius-card;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  
+  // Hardware Acceleration (Mitigate blur lag)
+  transform: translateZ(0);
+
+  // Glassmorphism support
+  @supports ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
+    background-color: rgba(255, 255, 255, 0.03);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(16px) saturate(180%);
+  }
+
+  // Mobile blur reduction for performance
+  @media (max-width: $bp-md) {
+    @supports ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
+      -webkit-backdrop-filter: blur(8px) saturate(180%);
+      backdrop-filter: blur(8px) saturate(180%);
+    }
+  }
+}

@@ -140,7 +140,7 @@ const projects = [
     title: "Decision Support System for MSME Product Selection",
     description: "Developed a web-based Decision Support System (DSS) for MSME food product curation and selection. Implemented the Analytic Hierarchy Process (AHP) for criteria weighting and Profile Matching for product evaluation, enabling objective ranking and decision-making through a multi-criteria assessment approach.",
     category: "fullstack",
-    tags: ["HTML", "SCSS", "JavaScript", "PHP", "Laravel", "Bootstrap, Supabase"],
+    tags: ["HTML", "SCSS", "JavaScript", "PHP", "Laravel", "Bootstrap", "Supabase"],
     thumbnail: "assets/images/projects/portfolio.jpg",
     liveUrl: "https://dss-kurasiumkm-demo.vercel.app",
     sourceUrl: "https://github.com/rakhalana/dss-kurasi",

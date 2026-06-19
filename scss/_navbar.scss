@@ -11,10 +11,10 @@
   background: transparent;
 
   &.scrolled {
-    background: rgba(10, 10, 10, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid $color-border;
+    @include glass-surface;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 12px 0;
   }
 
@@ -97,8 +97,9 @@
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(24px);
+  @include glass-surface;
+  border-radius: 0;
+  border: none;
   z-index: 1049;
   display: flex;
   align-items: center;
